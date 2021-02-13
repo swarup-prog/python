@@ -51,16 +51,6 @@ def takeCommand():
         return "None"
     return query
 
-"""
-def sendEmail(to, content):
-    server = smtplib.SMTP('smtp.gmail.com',587)
-    server.ehlo()
-    server.starttls()
-    f = open("E:\\Youtube Channel\\Office 2010 final\\Admin\\pas\\pass", 'r')
-    server.login('lswarup1234@gmail.com', 'f')
-    server.sendmail('lswarup980@gmail.com', to, content)
-    server.close()
-"""
 if __name__ == "__main__":
     wishMe()
     while True:
@@ -102,18 +92,7 @@ if __name__ == "__main__":
             os.startfile(os.path.join(music_dir, songs[n]))
             speak('Is this okay sir?')
            
-            """
-            if 'yes' in query:
-                speak('enjoy the music, Sir!')
-            elif 'no' in query:
-                music_dir = 'D:\\Music'
-                songs = os.listdir(music_dir)
-                print(songs)
-                n = random.randint(0,12)
-                os.startfile(os.path.join(music_dir, songs[n]))
-                speak('Is this okay sir?')
-            """
-        
+       
         elif 'time' in query:
             strTime = datetime.datetime.now().strftime('%I:%M %p')
             speak(f"Sir, the current time is {strTime}")
@@ -126,17 +105,7 @@ if __name__ == "__main__":
         elif 'open code editor' in query:
             codePath = "C:\\Users\\lenovo\\AppData\\Local\\Programs\\Microsoft VS Code\Code.exe"
             os.startfile(codePath)
-        """
-         elif 'send email' in query:
-            try:
-                speak("What should I say?")
-                to = "lswarup980@gmail.com"
-                sendEmail(to, content)
-                speak("Your email has been sent!")
-            except Exception as e:
-                print(e)
-                speak("Sorry Sir, I am not able to send the email!")
-        """
+
         if 'quit' in query:
             speak("Quitting Sir! Thanks for your time.")
             exit()
